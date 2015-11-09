@@ -1,0 +1,15 @@
+LOGIN TESTS
+	= redirect test (on 204 response from the service) - it does not care about username/password
+	= unsuccesful - check if login adds error text to scope ('OH THE SHAME!!!') if 401 or 404 is returned
+
+I cannot test the actual username/password combinations!
+We will have to mock out the response from the service
+
+FRIENDS CONTROLLER
+- Get list of friends when controller loads
+	= to return correct url
+	= test, that scope variable is set with a list of friends
+- Add friend
+	= if f==null then do not call service
+	= if f is valid(string) add to list, call the service with correct name
+		

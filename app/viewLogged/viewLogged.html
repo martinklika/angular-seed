@@ -1,0 +1,36 @@
+<small>Pretending that you are logged in...</small>
+<br>
+<small><font color="{{actionColour}}">{{actionMessage}}</font></small>
+
+<div class="maindiv">
+  <fieldset class="account-title">   
+    Friends
+  </fieldset>
+
+  <fieldset class="account-info">   
+        <div class="Row" ng-repeat="friend in listOfFriends">
+            <div class="Cell"><strong>
+                {{friend.name}}</strong>
+            </div>
+            <div class="Cell">
+                <input class="btn" type="submit" value="Delete" ng-click="fakeDeleteFriend(friend.id)">
+            </div>
+            <div class="Cell">
+              <input class="btn" type="submit" value="Delete permanently" ng-click="deleteFriend(friend.id)">    
+            </div>
+        </div>
+  </fieldset>
+
+  <fieldset class="account-info">
+   	<input type="text" placeholder="Name" ng-model="name">
+    <input class="btn" type="submit" value="Add new friend"  ng-click="addFriend()">
+  </fieldset>
+
+  <fieldset class="account-action">
+    <input class="btn" type="submit" value="Delete all"  ng-click="fakeDeleteAllFriends()">
+    <input class="btn" type="submit" value="Restore deleted"  ng-click="restoreFakeDeletedFriends()">
+    <input class="btn" type="submit" value="Delete all permanently"  ng-click="deleteAllFriends()">
+  </fieldset>
+</div>
+
+<br/>

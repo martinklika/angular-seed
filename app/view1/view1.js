@@ -34,6 +34,7 @@ angular.module('myApp.view1', ['ngRoute'])
     // Assigning variable (on object scope create a property name and assign a String 'Martin')
     // (JavaScript's simple way of doing this)
     $scope.name = 'Martin';
+        
     // Create another property called names
     // Populated it with whatever is in users (it will have the same type as users)
     $scope.names = userService.users;
@@ -47,4 +48,13 @@ angular.module('myApp.view1', ['ngRoute'])
       // it is depedent also by the View (input)
       userService.addUser($scope.name);
     };
-}]);
+}])
+
+.service('userService', function() {
+  //users is a list
+  this.users = ['Tom', 'Davis'];
+  //function addUser that pushes (adds) a name into users
+  this.addUser = function(name) {
+    this.users.push(name);    
+  }
+});
